@@ -1,94 +1,81 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Header from '../partials/Header'
-import Newsletter from '../partials/Newsletter'
-import Footer from '../partials/Footer'
+import React from 'react';
+import Footer from '../components/Footer'
 
 function Contact(props) {
     return (
-        <div>
-            <Header />
-            
-            <main id="main">
-                <section className="breadcrumbs">
-                    <div className="container">
-
-                        <div className="d-flex justify-content-between align-items-center">
-                            <h2>Contact</h2>
-                            <ol>
-                                <li><Link to="/">Home</Link></li>
-                                <li>Contact</li>
-                            </ol>
-                        </div>
+        <>
+            <section className="breadcrumb_area">
+                <div className="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
+                <div className="container">
+                    <div className="page-cover text-center">
+                        <h2 className="page-cover-tittle">Contact Us</h2>
+                        <ol className="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li className="active">Contact Us</li>
+                        </ol>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section id="contact" className="padd-section">
-                    <div className="container" data-aos="fade-up">
-                        <div className="section-title text-center">
-                            <h2>Contact</h2>
-                            <p className="separator">
-                                You can stop by our office and / or just use the contact form below for any questions and inquiries
-                            </p>
-                        </div>
-                        <div className="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                            <div className="col-lg-4 col-md-4">
-                                <div className="info">
-                                    <div>
-                                        <i className="bi bi-geo-alt"></i>
-                                        <p>Kigali - Rwanda, Nyarugenge - Muhima <br />11 KN 89 St , IBC Building -Ground floor</p>
-                                    </div>
-                                    <div className="email">
-                                        <i className="bi bi-envelope"></i>
-                                        <p>santechrw@gmail.com</p>
-                                    </div>
-                                    <div>
-                                        <i className="bi bi-phone"></i>
-                                        <p>+250 783 250 033 / +250 780 309 833</p>
-                                    </div>
+            <section className="contact_area section_gap">
+                <div className="container">
+                    {/* <div id="mapBox" className="mapBox" 
+                        data-lat="40.701083" 
+                        data-lon="-74.1522848" 
+                        data-zoom="13" 
+                        data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
+                        data-mlat="40.701083"
+                        data-mlon="-74.1522848">
+                    </div> */}
+                    <div className="row">
+                        <div className="col-md-3">
+                            <div className="contact_info">
+                                <div className="info_item">
+                                    <i className="lnr lnr-home"></i>
+                                    <h6>Rubavu, Rwanda</h6>
+                                    <p>Gisenyi</p>
                                 </div>
-                                <div className="social-links">
-                                    <a href="#" className="twitter"><i className="bi bi-twitter"></i></a>
-                                    <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
-                                    <a href="#" className="instagram"><i className="bi bi-instagram"></i></a>
-                                    <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a>
+                                <div className="info_item">
+                                    <i className="lnr lnr-phone-handset"></i>
+                                    <h6><a href="#">(+250) 788 888 888</a></h6>
+                                    <p>Mon to Fri 9am to 6 pm</p>
                                 </div>
-                            </div>
-                            <div className="col-lg-5 col-md-8">
-                                <div className="form">
-                                    <form action="" method="post" role="form" className="php-email-form">
-                                        <div className="form-group">
-                                            <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" required />
-                                        </div>
-                                        <div className="form-group mt-3">
-                                            <input type="email" className="form-control" name="email" id="email" placeholder="Your Email" required />
-                                        </div>
-                                        <div className="form-group mt-3">
-                                            <input type="text" className="form-control" name="subject" id="subject" placeholder="Subject" required />
-                                        </div>
-                                        <div className="form-group mt-3">
-                                            <textarea className="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                                        </div>
-                                        <div className="my-3">
-                                            <div className="loading">Loading</div>
-                                            <div className="error-message"></div>
-                                            <div className="sent-message">Your message has been sent. Thank you!</div>
-                                        </div>
-                                        <div className="text-center">
-                                            <button type="submit">Send Message</button>
-                                        </div>
-                                    </form>
+                                <div className="info_item">
+                                    <i className="lnr lnr-envelope"></i>
+                                    <h6><a href="#">info@hotel.com</a></h6>
+                                    <p>Send us your query anytime!</p>
                                 </div>
                             </div>
                         </div>
+                        <div className="col-md-9">
+                            <form className="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <input type="text" className="form-control" id="name" name="name" placeholder="Enter your name" />
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="email" className="form-control" id="email" name="email" placeholder="Enter email address" />
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="text" className="form-control" id="subject" name="subject" placeholder="Enter Subject" />
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="form-group">
+                                        <textarea className="form-control" name="message" id="message" rows="1" placeholder="Enter Message"></textarea>
+                                    </div>
+                                </div>
+                                <div className="col-md-12 text-right">
+                                    <button type="submit" value="submit" className="btn theme_btn button_hover">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </section>
-
-                <Newsletter />
-            </main>
+                </div>
+            </section>
 
             <Footer />
-        </div>
+        </>
     );
 }
 
